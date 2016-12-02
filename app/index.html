@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Extrato da Conta Corrente App</title>
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:appcss styles/app.css -->
+        <link rel="stylesheet" href="styles/app.css">
+        <!-- endbuild -->
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body ng-controller="desafioCtrl">
+	
+	    <div class="container page">		
+
+			<div class="page-header">
+				<h1>Extrato Conta Corrente</h1>
+			</div>
+
+			<div class="row">
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<table class="table table-striped table-hover">
+					 <tr>
+						<th>
+						Data do lan&ccedil;amento
+						</th>
+						<th>
+						Descri&ccedil;&atilde;o 
+						</th>
+						<th>
+						N&uacute;mero 
+						</th>
+						<th>
+						Situa&ccedil;&atilde;o 
+						</th>
+						<th>
+						Data de confirma&ccedil;&atilde;o 
+						</th>
+						<th>
+						Dados banc&aacute;rios
+						</th>
+						<th>
+						Valor final
+						</th>
+					 </tr>
+					 <tr ng-repeat="lancamento in lancamentos">
+							<td>{{lancamento.data}}</td>
+							<td>{{lancamento.descricao}}</td>
+							<td>{{lancamento.number}}</td>
+							<td>{{lancamento.situacao}}</td>
+							<td>{{lancamento.dataConfirmacao}}</td>
+							<td>{{lancamento.dadosBancarios}}</td>
+							<td>R$ {{lancamento.valorFinal}}</td>
+					 </tr>
+					</table>
+				</div>
+            </div>
+        </div>
+		
+        </div>
+	
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbower -->
+		
+		<script src="scripts/app.js"></script>
+	
+	</body>
+	
